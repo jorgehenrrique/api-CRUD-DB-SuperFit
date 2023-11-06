@@ -1,0 +1,12 @@
+{
+  "name": "api-crud-db-superfit",
+  "version": "1.0.0",
+  "description": "API CRUD SuperFit",
+  "main": "index.js",
+  "scripts": {
+    "server": "nodemon src/server.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
