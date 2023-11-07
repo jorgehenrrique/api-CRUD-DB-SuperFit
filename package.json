@@ -4,7 +4,9 @@
   "description": "API CRUD SuperFit",
   "main": "index.js",
   "scripts": {
-    "server": "nodemon src/server.ts"
+    "build": "tsc",
+    "dev": "nodemon src/server.ts",
+    "start": "nodemon dist/server.js"
   },
   "keywords": [],
   "author": "Jorge E Geovana",
