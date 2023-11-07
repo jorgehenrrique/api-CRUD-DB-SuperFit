@@ -13,3 +13,11 @@ app.use(express.json());
 app.listen(port, () => {
   console.log('Server ok port: ' + port);
 });
+
+// CRUD - CREATE READ UPDATE DELETE
+
+// Logar usuario
+// app.post('/login', loginUsers);
+
+// GET: http://localhost:3000/pessoas
+app.get('/pessoas', pessoas.pessoasList);
