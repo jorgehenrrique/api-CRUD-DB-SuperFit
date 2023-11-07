@@ -1,1 +1,1 @@
-const { SECRET_KEY } = process.env.SECRET_KEY || '';
+const secretKey: string = process.env.SECRET_KEY || '';
