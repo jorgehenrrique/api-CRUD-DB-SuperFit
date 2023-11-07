@@ -21,3 +21,18 @@ app.listen(port, () => {
 
 // GET: http://localhost:3000/pessoas
 app.get('/pessoas', pessoas.pessoasList);
+
+// GET: http://localhost:3000/pessoas/:id
+app.get('/pessoas/:id', pessoas.pessoasListId);
+
+// CREATE
+// POST: http://localhost:3000/pessoas
+app.post('/pessoas', pessoas.pessoasAdd);
+
+// UPDATE
+// PUT: http://localhost:3000/pessoas/:id
+app.put('/pessoas/:id', pessoas.pessoasUpdate);
+
+// DELETE
+// DELETE: http://localhost:3000/pessoas/:id
+app.delete('/pessoas/:id', pessoas.pessoasDelete);
