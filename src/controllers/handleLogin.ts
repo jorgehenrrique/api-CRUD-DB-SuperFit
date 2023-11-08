@@ -18,8 +18,13 @@ export default async function login(req: any, res: any) {
       (u) => u.email === email && u.cgc === cgc && u.tipo_pessoa === 'J'
     );
 
+    if (!currentUser)
+      return res.status(401).json({
+        error: 'Email ou cgc inválidos.',
+      });
+
     if (currentUser?.tipo_cadastro !== 'I') {
-      return res.status(500).json({
+      return res.status(403).json({
         error: 'Usuario deve ser um instrutor!',
       });
     }
@@ -30,16 +35,11 @@ export default async function login(req: any, res: any) {
         expiresIn: '24h',
       });
       console.log('Usuario logado com sucesso');
-      return res.json({ token });
+      return res.json({ message: 'Usuario logado com sucesso!', token });
     }
-
-    if (!currentUser)
-      res.status(500).json({
-        error: 'Email ou cgc inválidos',
-      });
   } catch (error: any) {
     console.error(error);
-    res.status(500).json({
+    return res.status(500).json({
       error: 'Erro ao fazer login',
       message: error.message,
     });
