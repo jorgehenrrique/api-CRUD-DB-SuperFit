@@ -29,12 +29,10 @@ export default async function login(req: any, res: any) {
       });
     }
 
-    // console.log(currentUser);
     if (currentUser) {
       const token = jwt.sign(currentUser, TOKEN_SECRET as string, {
         expiresIn: '24h',
       });
-      console.log('Usuario logado com sucesso');
       return res.json({ message: 'Usuario logado com sucesso!', token });
     }
   } catch (error: any) {

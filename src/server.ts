@@ -3,6 +3,7 @@ import * as pessoas from './controllers/handlePessoas';
 
 import dotenv from 'dotenv';
 import login from './controllers/handleLogin';
+import loginRequired from './middlewares/loginRequired';
 dotenv.config();
 
 const app = express();
@@ -22,7 +23,7 @@ app.listen(port, () => {
 app.post('/login', login);
 
 // GET: http://localhost:3000/pessoas
-app.get('/pessoas', pessoas.pessoasList);
+app.get('/pessoas', loginRequired, pessoas.pessoasList);
 
 // GET: http://localhost:3000/pessoas/:id
 app.get('/pessoas/:id', pessoas.pessoasListId);
