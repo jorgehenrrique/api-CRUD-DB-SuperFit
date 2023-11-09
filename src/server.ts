@@ -26,13 +26,13 @@ app.post('/login', login);
 app.get('/pessoas', loginRequired, pessoas.pessoasList);
 
 // GET: http://localhost:3000/pessoas/:id
-app.get('/pessoas/:id', pessoas.pessoasListId);
+app.get('/pessoas/:id', loginRequired, pessoas.pessoasListId);
 
 // POST: http://localhost:3000/pessoas
-app.post('/pessoas', pessoas.pessoasAdd);
+app.post('/pessoas', loginRequired, pessoas.pessoasAdd);
 
 // PUT: http://localhost:3000/pessoas/:id
-app.put('/pessoas/:id', pessoas.pessoasUpdate);
+app.put('/pessoas/:id', loginRequired, pessoas.pessoasUpdate);
 
 // DELETE: http://localhost:3000/pessoas/:id
-app.delete('/pessoas/:id', pessoas.pessoasDelete);
+app.delete('/pessoas/:id', loginRequired, pessoas.pessoasDelete);
