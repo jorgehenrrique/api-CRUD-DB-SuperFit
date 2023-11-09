@@ -24,7 +24,11 @@ export default async function loginRequired(req: any, res: any, next: any) {
 
     const user = await pessoaService.find(id);
 
-    if (user.email !== email && user.cgc !== cgc && user.tipo_pessoa !== 'J') {
+    if (
+      user.email !== email &&
+      user.cgc !== cgc &&
+      user.tipo_cadastro !== 'I'
+    ) {
       return res.status(401).json({
         error: 'Usuário inválido',
       });

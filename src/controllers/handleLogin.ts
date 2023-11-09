@@ -15,7 +15,7 @@ export default async function login(req: any, res: any) {
   try {
     const users = await pessoaService.getAll();
     const currentUser = users.find(
-      (u) => u.email === email && u.cgc === cgc && u.tipo_pessoa === 'J'
+      (u) => u.email === email && u.cgc === cgc && u.tipo_cadastro === 'I'
     );
 
     if (!currentUser)
