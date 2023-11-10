@@ -12,13 +12,13 @@ import loginRequired from './middlewares/loginRequired';
 dotenv.config();
 
 const app = express();
-const port = process.env.HOST_PORT;
+const { HOST_PORT } = process.env;
 
 app.use(express.json());
 
 // Inicia o sevidor
-app.listen(port, () => {
-  console.log('Server ok port: ' + port);
+app.listen(HOST_PORT, () => {
+  console.log('Server ok port: ' + HOST_PORT);
 });
 
 // CRUD - CREATE READ UPDATE DELETE
