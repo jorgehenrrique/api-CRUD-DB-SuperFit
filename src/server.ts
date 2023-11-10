@@ -126,3 +126,10 @@ app.put('/modalidadesplanos/:id', modalidadesPlanos.modalidadesplanosUpdate);
 
 // DELETE: http://localhost:3000/modalidadesplanos/:id
 app.delete('/modalidadesplanos/:id', modalidadesPlanos.modalidadesplanosDelete);
+
+// ----------------------------------------------------------------
+
+// Resposta padrão para quaisquer outras requisições:
+app.use((_: any, res: any) => {
+  res.status(404).send({ message: 'Link inexistente!' });
+});
