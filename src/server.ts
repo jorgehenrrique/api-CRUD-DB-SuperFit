@@ -2,6 +2,8 @@ import express from 'express';
 import * as pessoas from './controllers/handlePessoas';
 import * as modalidades from './controllers/handleModalidades';
 import * as planos from './controllers/handlePlanos';
+import * as matriculas from './controllers/handleMatriculas';
+import * as horariosAulas from './controllers/handleHorariosAulas';
 
 import dotenv from 'dotenv';
 import login from './controllers/handleLogin';
@@ -72,5 +74,39 @@ app.put('/planos/:id', planos.planosUpdate);
 
 // DELETE: http://localhost:3000/planos/:id
 app.delete('/planos/:id', planos.planosDelete);
+
+// ----------------------------------------------------------------
+
+// GET: http://localhost:3000/matriculas
+app.get('/matriculas', matriculas.matriculasList);
+
+// GET: http://localhost:3000/matriculas/:id
+app.get('/matriculas/:id', matriculas.matriculasListId);
+
+// POST: http://localhost:3000/matriculas
+app.post('/matriculas/', matriculas.matriculasAdd);
+
+// PUT: http://localhost:3000/matriculas/:id
+app.put('/matriculas/:id', matriculas.matriculasUpdate);
+
+// DELETE: http://localhost:3000/matriculas/:id
+app.delete('/matriculas/:id', matriculas.matriculasDelete);
+
+// ----------------------------------------------------------------
+
+// GET: http://localhost:3000/horarioaulas
+app.get('/horarioaulas', horariosAulas.horariosAulasList);
+
+// GET: http://localhost:3000/horarioaulas/:id
+app.get('/horarioaulas/:id', horariosAulas.horariosAulasListId);
+
+// POST: http://localhost:3000/horarioaulas
+app.post('/horarioaulas/', horariosAulas.horariosAulasAdd);
+
+// PUT: http://localhost:3000/horarioaulas/:id
+app.put('/horarioaulas/:id', horariosAulas.horariosAulasUpdate);
+
+// DELETE: http://localhost:3000/horarioaulas/:id
+app.delete('/horarioaulas/:id', horariosAulas.horariosAulasDelete);
 
 // ----------------------------------------------------------------
