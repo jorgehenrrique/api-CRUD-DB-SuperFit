@@ -4,6 +4,7 @@ import * as modalidades from './controllers/handleModalidades';
 import * as planos from './controllers/handlePlanos';
 import * as matriculas from './controllers/handleMatriculas';
 import * as horariosAulas from './controllers/handleHorariosAulas';
+import * as modalidadesPlanos from './controllers/handleModalidadesPlanos';
 
 import dotenv from 'dotenv';
 import login from './controllers/handleLogin';
@@ -110,3 +111,18 @@ app.put('/horarioaulas/:id', horariosAulas.horariosAulasUpdate);
 app.delete('/horarioaulas/:id', horariosAulas.horariosAulasDelete);
 
 // ----------------------------------------------------------------
+
+// GET: http://localhost:3000/modalidadesplanos
+app.get('/modalidadesplanos', modalidadesPlanos.modalidadesPlanosList);
+
+// GET: http://localhost:3000/modalidadesplanos/:id
+app.get('/modalidadesplanos/:id', modalidadesPlanos.modalidadesPlanosListId);
+
+// POST: http://localhost:3000/modalidadesplanos
+app.post('/modalidadesplanos/', modalidadesPlanos.modalidadesPlanosAdd);
+
+// PUT: http://localhost:3000/modalidadesplanos/:id
+app.put('/modalidadesplanos/:id', modalidadesPlanos.modalidadesplanosUpdate);
+
+// DELETE: http://localhost:3000/modalidadesplanos/:id
+app.delete('/modalidadesplanos/:id', modalidadesPlanos.modalidadesplanosDelete);
