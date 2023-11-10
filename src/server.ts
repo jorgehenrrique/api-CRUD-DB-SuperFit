@@ -45,87 +45,111 @@ app.delete('/pessoas/:id', loginRequired, pessoas.pessoasDelete);
 // ----------------------------------------------------------------
 
 // GET: http://localhost:3000/modalidades
-app.get('/modalidades', modalidades.modalidadesList);
+app.get('/modalidades', loginRequired, modalidades.modalidadesList);
 
 // GET: http://localhost:3000/modalidades/:id
-app.get('/modalidades/:id', modalidades.modalidadesListId);
+app.get('/modalidades/:id', loginRequired, modalidades.modalidadesListId);
 
 // POST: http://localhost:3000/modalidades
-app.post('/modalidades', modalidades.modalidadesAdd);
+app.post('/modalidades', loginRequired, modalidades.modalidadesAdd);
 
 // PUT: http://localhost:3000/modalidades/:id
-app.put('/modalidades/:id', modalidades.modalidadesUpdate);
+app.put('/modalidades/:id', loginRequired, modalidades.modalidadesUpdate);
 
 // DELETE: http://localhost:3000/modalidades/:id
-app.delete('/modalidades/:id', modalidades.modalidadesDelete);
+app.delete('/modalidades/:id', loginRequired, modalidades.modalidadesDelete);
 
 // ----------------------------------------------------------------
 
 // GET: http://localhost:3000/planos
-app.get('/planos', planos.planosList);
+app.get('/planos', loginRequired, planos.planosList);
 
 // GET: http://localhost:3000/planos/:id
-app.get('/planos/:id', planos.planosListId);
+app.get('/planos/:id', loginRequired, planos.planosListId);
 
 // POST: http://localhost:3000/planos
-app.post('/planos/', planos.planosAdd);
+app.post('/planos/', loginRequired, planos.planosAdd);
 
 // PUT: http://localhost:3000/planos/:id
-app.put('/planos/:id', planos.planosUpdate);
+app.put('/planos/:id', loginRequired, planos.planosUpdate);
 
 // DELETE: http://localhost:3000/planos/:id
-app.delete('/planos/:id', planos.planosDelete);
+app.delete('/planos/:id', loginRequired, planos.planosDelete);
 
 // ----------------------------------------------------------------
 
 // GET: http://localhost:3000/matriculas
-app.get('/matriculas', matriculas.matriculasList);
+app.get('/matriculas', loginRequired, matriculas.matriculasList);
 
 // GET: http://localhost:3000/matriculas/:id
-app.get('/matriculas/:id', matriculas.matriculasListId);
+app.get('/matriculas/:id', loginRequired, matriculas.matriculasListId);
 
 // POST: http://localhost:3000/matriculas
-app.post('/matriculas/', matriculas.matriculasAdd);
+app.post('/matriculas/', loginRequired, matriculas.matriculasAdd);
 
 // PUT: http://localhost:3000/matriculas/:id
-app.put('/matriculas/:id', matriculas.matriculasUpdate);
+app.put('/matriculas/:id', loginRequired, matriculas.matriculasUpdate);
 
 // DELETE: http://localhost:3000/matriculas/:id
-app.delete('/matriculas/:id', matriculas.matriculasDelete);
+app.delete('/matriculas/:id', loginRequired, matriculas.matriculasDelete);
 
 // ----------------------------------------------------------------
 
 // GET: http://localhost:3000/horarioaulas
-app.get('/horarioaulas', horariosAulas.horariosAulasList);
+app.get('/horarioaulas', loginRequired, horariosAulas.horariosAulasList);
 
 // GET: http://localhost:3000/horarioaulas/:id
-app.get('/horarioaulas/:id', horariosAulas.horariosAulasListId);
+app.get('/horarioaulas/:id', loginRequired, horariosAulas.horariosAulasListId);
 
 // POST: http://localhost:3000/horarioaulas
-app.post('/horarioaulas/', horariosAulas.horariosAulasAdd);
+app.post('/horarioaulas/', loginRequired, horariosAulas.horariosAulasAdd);
 
 // PUT: http://localhost:3000/horarioaulas/:id
-app.put('/horarioaulas/:id', horariosAulas.horariosAulasUpdate);
+app.put('/horarioaulas/:id', loginRequired, horariosAulas.horariosAulasUpdate);
 
 // DELETE: http://localhost:3000/horarioaulas/:id
-app.delete('/horarioaulas/:id', horariosAulas.horariosAulasDelete);
+app.delete(
+  '/horarioaulas/:id',
+  loginRequired,
+  horariosAulas.horariosAulasDelete
+);
 
 // ----------------------------------------------------------------
 
 // GET: http://localhost:3000/modalidadesplanos
-app.get('/modalidadesplanos', modalidadesPlanos.modalidadesPlanosList);
+app.get(
+  '/modalidadesplanos',
+  loginRequired,
+  modalidadesPlanos.modalidadesPlanosList
+);
 
 // GET: http://localhost:3000/modalidadesplanos/:id
-app.get('/modalidadesplanos/:id', modalidadesPlanos.modalidadesPlanosListId);
+app.get(
+  '/modalidadesplanos/:id',
+  loginRequired,
+  modalidadesPlanos.modalidadesPlanosListId
+);
 
 // POST: http://localhost:3000/modalidadesplanos
-app.post('/modalidadesplanos/', modalidadesPlanos.modalidadesPlanosAdd);
+app.post(
+  '/modalidadesplanos/',
+  loginRequired,
+  modalidadesPlanos.modalidadesPlanosAdd
+);
 
 // PUT: http://localhost:3000/modalidadesplanos/:id
-app.put('/modalidadesplanos/:id', modalidadesPlanos.modalidadesplanosUpdate);
+app.put(
+  '/modalidadesplanos/:id',
+  loginRequired,
+  modalidadesPlanos.modalidadesplanosUpdate
+);
 
 // DELETE: http://localhost:3000/modalidadesplanos/:id
-app.delete('/modalidadesplanos/:id', modalidadesPlanos.modalidadesplanosDelete);
+app.delete(
+  '/modalidadesplanos/:id',
+  loginRequired,
+  modalidadesPlanos.modalidadesplanosDelete
+);
 
 // ----------------------------------------------------------------
 
