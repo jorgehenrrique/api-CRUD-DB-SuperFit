@@ -11,3 +11,7 @@ Com base no banco de dados criado para a academia SuperFit ao longo da disciplin
 Dica: Analise a necessidade de criação de novas tabelas e/ou campos para adequar a base de dados e resolver os problemas propostos.
 
 O trabalho pode ser executado em duplas e não será necessário a entrega de um front-end.
+
+## Login para acesso as requesições
+
+- Login utiliza json web token
