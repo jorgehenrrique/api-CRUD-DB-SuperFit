@@ -40,10 +40,8 @@ export class ModalidadePlanoService implements InterfaceCrud<MPModel> {
   async update(ids: any, payload: MPModel): Promise<MPModel> {
     const planoId = ids.id;
     const modalidadeId = ids.id2;
-    console.log(planoId, modalidadeId);
 
     const { plano_id, modalidade_id } = payload;
-    console.log(plano_id, modalidade_id);
 
     const values = [plano_id, modalidade_id, planoId, modalidadeId];
     const result = await this.db.query(
@@ -55,7 +53,15 @@ export class ModalidadePlanoService implements InterfaceCrud<MPModel> {
     return result.rows[0];
   }
 
-  delete(id: string): Promise<void> {
-    throw new Error('Method not implemented.');
+  async delete(ids: any): Promise<void> {
+    const planoId = ids.id;
+    const modalidadeId = ids.id2;
+
+    const result = await this.db.query(
+      `DELETE FROM modalidades_planos
+      WHERE plano_id=$1 AND modalidade_id=$2 Returning *;`,
+      [planoId, modalidadeId]
+    );
+    return result.rows[0];
   }
 }

@@ -64,15 +64,8 @@ export async function modalidadesplanosUpdate(req: any, res: any) {
   const db = createDBClient();
   await db.connect();
   const modalidadePlanoService = new ModalidadePlanoService(db);
-  // const { id } = req.params;
 
   try {
-    // const modalidadePlanoId = await modalidadePlanoService.find(req.params);
-    // const payload = {
-    //   plano_id: req.body.plano_id || modalidadePlanoId.plano_id,
-    //   modalidade_id: req.body.plano_id || modalidadePlanoId.plano_id,
-    // };
-
     const modalidadePlano = await modalidadePlanoService.update(
       req.params,
       req.body
@@ -97,7 +90,10 @@ export async function modalidadesplanosDelete(req: any, res: any) {
   const modalidadePlanoService = new ModalidadePlanoService(db);
 
   try {
-    const user = await modalidadePlanoService.delete(req.params.id);
+    const user = await modalidadePlanoService.delete(req.params);
+    if (user == null) {
+      return res.status(404).json({ status: `Par de ids não encontrado` });
+    }
     res.json(user);
   } catch (error: any) {
     res.status(500).json({

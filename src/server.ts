@@ -144,9 +144,9 @@ app.put(
   modalidadesPlanos.modalidadesplanosUpdate
 );
 
-// DELETE: http://localhost:3000/modalidadesplanos/:id
+// DELETE: http://localhost:3000/modalidadesplanos/:id/:id2
 app.delete(
-  '/modalidadesplanos/:id',
+  '/modalidadesplanos/:id/:id2',
   loginRequired,
   modalidadesPlanos.modalidadesplanosDelete
 );
