@@ -17,10 +17,13 @@ export class ModalidadePlanoService implements InterfaceCrud<MPModel> {
     return result.rows as MPModel[];
   }
 
-  async find(id: string): Promise<MPModel> {
+  async find(ids: any): Promise<MPModel> {
+    const planoId = ids.id;
+    const modalidadeId = ids.id2;
+
     const result = await this.db.query(
-      'SELECT * FROM modalidades_planos WHERE plano_id=$1 OR modalidade_id=$1',
-      [id]
+      'SELECT * FROM modalidades_planos WHERE plano_id=$1 AND modalidade_id=$2',
+      [planoId, modalidadeId]
     );
     return result.rows[0] as MPModel;
   }
@@ -34,13 +37,19 @@ export class ModalidadePlanoService implements InterfaceCrud<MPModel> {
     return result.rows[0];
   }
 
-  async update(id: string, payload: MPModel): Promise<MPModel> {
+  async update(ids: any, payload: MPModel): Promise<MPModel> {
+    const planoId = ids.id;
+    const modalidadeId = ids.id2;
+    console.log(planoId, modalidadeId);
+
     const { plano_id, modalidade_id } = payload;
-    const values = [plano_id, modalidade_id, id];
+    console.log(plano_id, modalidade_id);
+
+    const values = [plano_id, modalidade_id, planoId, modalidadeId];
     const result = await this.db.query(
       `UPDATE modalidades_planos
       SET plano_id=$1, modalidade_id=$2
-      WHERE plano_id=$3 Returning *;`,
+      WHERE plano_id=$3 AND modalidade_id=$4 Returning *;`,
       values
     );
     return result.rows[0];

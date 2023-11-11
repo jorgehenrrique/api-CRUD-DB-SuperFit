@@ -123,9 +123,9 @@ app.get(
   modalidadesPlanos.modalidadesPlanosList
 );
 
-// GET: http://localhost:3000/modalidadesplanos/:id
+// GET: http://localhost:3000/modalidadesplanos/:id/:id2
 app.get(
-  '/modalidadesplanos/:id',
+  '/modalidadesplanos/:id/:id2',
   loginRequired,
   modalidadesPlanos.modalidadesPlanosListId
 );
@@ -137,9 +137,9 @@ app.post(
   modalidadesPlanos.modalidadesPlanosAdd
 );
 
-// PUT: http://localhost:3000/modalidadesplanos/:id
+// PUT: http://localhost:3000/modalidadesplanos/:id/:id2
 app.put(
-  '/modalidadesplanos/:id',
+  '/modalidadesplanos/:id/:id2',
   loginRequired,
   modalidadesPlanos.modalidadesplanosUpdate
 );
