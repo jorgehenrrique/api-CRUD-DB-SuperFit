@@ -78,6 +78,7 @@ export async function pessoasUpdate(req: any, res: any) {
       email: string;
       tipo_cadastro: string;
       ativo: string;
+      adimplente: boolean;
     } = {
       nome: req.body.nome || userId.nome,
       cgc: req.body.cgc || userId.cgc,
@@ -85,7 +86,9 @@ export async function pessoasUpdate(req: any, res: any) {
       email: req.body.email || userId.email,
       tipo_cadastro: req.body.tipo_cadastro || userId.tipo_cadastro,
       ativo: req.body.ativo || userId.ativo,
+      adimplente: req.body.adimplente,
     };
+    console.log(req.body);
 
     const user = await pessoaService.update(id, payload);
     res.json(user);

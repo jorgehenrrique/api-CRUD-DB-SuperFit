@@ -152,6 +152,13 @@ app.delete(
 );
 
 // ----------------------------------------------------------------
+// GET: http://localhost:3000/status/:id
+// app.get(
+//   '/modalidadesplanos',
+//   loginRequired,
+//   modalidadesPlanos.modalidadesPlanosList
+// );
+// ----------------------------------------------------------------
 
 // Resposta padrão para quaisquer outras requisições:
 app.use((_: any, res: any) => {
