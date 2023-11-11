@@ -1,5 +1,5 @@
-import createDBClient from "../db/connection";
-import { PlanoService } from "../services/plano.service";
+import createDBClient from '../db/connection';
+import { PlanoService } from '../services/plano.service';
 
 export async function planosList(_: any, res: any) {
   const db = createDBClient();
@@ -12,7 +12,7 @@ export async function planosList(_: any, res: any) {
   } catch (error: any) {
     console.error(error);
     res.status(500).json({
-      error: "Erro ao buscar os planos",
+      error: 'Erro ao buscar os planos',
       message: error.message,
     });
   } finally {
@@ -92,6 +92,9 @@ export async function planosDelete(req: any, res: any) {
 
   try {
     const user = await planoService.delete(req.params.id);
+    if (user == null) {
+      return res.status(404).json({ status: `Id não existe` });
+    }
     res.json(user);
   } catch (error: any) {
     res.status(500).json({

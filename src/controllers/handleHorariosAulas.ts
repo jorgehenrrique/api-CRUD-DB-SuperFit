@@ -94,6 +94,9 @@ export async function horariosAulasDelete(req: any, res: any) {
 
   try {
     const user = await horarioAulaService.delete(req.params.id);
+    if (user == null) {
+      return res.status(404).json({ status: `Id não existe` });
+    }
     res.json(user);
   } catch (error: any) {
     res.status(500).json({
