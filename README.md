@@ -75,3 +75,212 @@ O projeto SuperFit é uma API completa para gerenciamento de diferentes entidade
 ### Consumo dos Endpoints disponíveis
 
 A seguir estão listados os endpoints disponíveis no servidor e como utilizar:
+
+- /login: Endpoint para autenticação de usuários.
+- /relatorio: Endpoint para geração de relatórios.
+- /pessoas: Endpoint para operações CRUD na entidade "Pessoas".
+- /modalidades: Endpoint para operações CRUD na entidade "Modalidades".
+- /planos: Endpoint para operações CRUD na entidade "Planos".
+- /matriculas: Endpoint para operações CRUD na entidade "Matrículas".
+- /horarioaulas: Endpoint para operações CRUD na entidade "Horários de Aulas".
+- /modalidadesplanos: Endpoint para operações CRUD na entidade "Modalidades Planos".
+
+## Consumo das rotas
+
+### Login
+
+**URL:** `/login`
+
+**Método:** `POST`
+
+**Corpo da requisição:**
+
+```json
+{
+  "cgc": "65748907123",
+  "email": "carla@email"
+}
+```
+
+**Resposta:**
+
+```json
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNiIsIm5hbWUiOiJKb2FvIn0sImlhdCI6MTY0ODgzNjkzM30.FwioGSfHby1QII5zZ-Hxf-DUpCtT2I7DWchNiA9PFOs"
+}
+```
+
+Salvar o token recebido para incluir nos headers das demais requisições.
+
+### Relatorio
+
+**URL:** `/relatorio`
+
+**Método:** `GET`
+
+**Headers:**
+`Authorization API Key`
+
+### Pessoas listar
+
+**URL:** `/pessoas`
+
+**Método:** `GET`
+
+**Headers:**
+`Authorization API Key`
+
+### Pessoas listar id
+
+**URL:** `/pessoas/:id`
+
+**Método:** `GET`
+
+**Headers:**
+`Authorization API Key`
+
+### Pessoas criar
+
+**URL:** `/pessoas`
+
+**Método:** `POST`
+
+**Headers:**
+`Authorization API Key`
+
+**Corpo da requisição:**
+
+```json
+{
+  "nome": "Henrique II",
+  "cgc": "000009000999",
+  "tipo_pessoa": "F",
+  "email": "novoE@email.com",
+  "tipo_cadastro": "A",
+  "ativo": "S"
+}
+```
+
+**Resposta:**
+
+`json`
+
+### Pessoas atualizar
+
+**URL:** `/pessoas/:id`
+
+**Método:** `PUT`
+
+**Headers:**
+`Authorization API Key`
+
+**Corpo da requisição:**
+
+```json
+{
+  "nome": "",
+  "cgc": "",
+  "tipo_pessoa": "",
+  "email": "",
+  "tipo_cadastro": "",
+  "ativo": ""
+}
+```
+
+**Resposta:**
+
+`json`
+
+### Pessoas deletar
+
+**URL:** `/pessoas/:id`
+
+**Método:** `DELETE`
+
+**Headers:**
+`Authorization API Key`
+
+**Resposta:**
+
+`json`
+
+### Modalidades listar
+
+**URL:** `/modalidades`
+
+**Método:** `GET`
+
+**Headers:**
+`Authorization API Key`
+
+**Resposta:**
+
+`json`
+
+### Modalidades listar id
+
+**URL:** `/modalidades/:id`
+
+**Método:** `GET`
+
+**Headers:**
+`Authorization API Key`
+
+**Resposta:**
+
+`json`
+
+### Modalidade criar
+
+**URL:** `/modalidades`
+
+**Método:** `POST`
+
+**Headers:**
+`Authorization API Key`
+
+**Corpo da requisição:**
+
+```json
+{
+  "nome": "NOME"
+}
+```
+
+**Resposta:**
+
+`json`
+
+### Modalidade atualizar
+
+**URL:** `/modalidades/:id`
+
+**Método:** `PUT`
+
+**Headers:**
+`Authorization API Key`
+
+**Corpo da requisição:**
+
+```json
+{
+  "nome": "NOME"
+}
+```
+
+**Resposta:**
+
+`json`
+
+### modalidade deletar
+
+**URL:** `/modalidades/:id`
+
+**Método:** `DELETE`
+
+**Headers:**
+`Authorization API Key`
+
+**Resposta:**
+
+`json`
