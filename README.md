@@ -153,6 +153,10 @@ Salvar o token recebido para incluir nos headers das demais requisições.
 **Headers:**
 `Authorization API Key`
 
+**Resposta:**
+
+`json`
+
 ### Pessoas listar id
 
 **URL:** `/pessoas/:id`
@@ -161,6 +165,10 @@ Salvar o token recebido para incluir nos headers das demais requisições.
 
 **Headers:**
 `Authorization API Key`
+
+**Resposta:**
+
+`json`
 
 ### Pessoas criar
 
