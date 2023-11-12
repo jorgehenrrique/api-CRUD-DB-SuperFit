@@ -27,6 +27,10 @@ app.listen(HOST_PORT, () => {
 // POST http://localhost:3000/login
 app.post('/login', login);
 
+// Relatorio
+// GET http://localhost:3000/relatorio
+app.get('/relatorio');
+
 // GET: http://localhost:3000/pessoas
 app.get('/pessoas', loginRequired, pessoas.pessoasList);
 
@@ -151,13 +155,6 @@ app.delete(
   modalidadesPlanos.modalidadesplanosDelete
 );
 
-// ----------------------------------------------------------------
-// GET: http://localhost:3000/status/:id
-// app.get(
-//   '/modalidadesplanos',
-//   loginRequired,
-//   modalidadesPlanos.modalidadesPlanosList
-// );
 // ----------------------------------------------------------------
 
 // Resposta padrão para quaisquer outras requisições:
