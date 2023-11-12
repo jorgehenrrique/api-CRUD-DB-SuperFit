@@ -33,13 +33,13 @@ O servidor oferece as seguintes funcionalidades:
 1. Clone o repositório do projeto:
 
    ```
-   git clone https://github.com/seu-usuario/projeto-xyz.git
+   git clone https://github.com/jorgehenrrique/api-CRUD-DB-SuperFit
    ```
 
 2. Instale as dependências do projeto:
 
    ```
-   cd projeto-xyz
+   cd api-CRUD-DB-SuperFit
    npm install
    ```
 
