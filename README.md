@@ -121,6 +121,8 @@ Salvar o token recebido para incluir nos headers das demais requisições.
 **Headers:**
 `Authorization API Key`
 
+---
+
 ### Pessoas listar
 
 **URL:** `/pessoas`
@@ -204,6 +206,8 @@ Salvar o token recebido para incluir nos headers das demais requisições.
 
 `json`
 
+---
+
 ### Modalidades listar
 
 **URL:** `/modalidades`
@@ -284,3 +288,92 @@ Salvar o token recebido para incluir nos headers das demais requisições.
 **Resposta:**
 
 `json`
+
+---
+
+### planos listar
+
+**URL:** `/planos`
+
+**Método:** `GET`
+
+**Headers:**
+`Authorization API Key`
+
+**Resposta:**
+
+`json`
+
+### planos listar id
+
+**URL:** `/planos/:id`
+
+**Método:** `GET`
+
+**Headers:**
+`Authorization API Key`
+
+**Resposta:**
+
+`json`
+
+### planos criar
+
+**URL:** `/planos`
+
+**Método:** `POST`
+
+**Headers:**
+`Authorization API Key`
+
+**Corpo da requisição:**
+
+```json
+{
+  "nome": "PLANO",
+  "descricao": "Desc",
+  "preco": "000.00"
+}
+```
+
+**Resposta:**
+
+`json`
+
+### planos atualizar
+
+**URL:** `/planos/:id`
+
+**Método:** `PUT`
+
+**Headers:**
+`Authorization API Key`
+
+**Corpo da requisição:**
+
+```json
+{
+  "nome": "PLANO",
+  "descricao": "Desc",
+  "preco": "000.00"
+}
+```
+
+**Resposta:**
+
+`json`
+
+### planos deletar
+
+**URL:** `/planos/:id`
+
+**Método:** `DELETE`
+
+**Headers:**
+`Authorization API Key`
+
+**Resposta:**
+
+`json`
+
+---
