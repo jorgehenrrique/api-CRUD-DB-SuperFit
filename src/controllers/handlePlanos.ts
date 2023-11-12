@@ -12,7 +12,7 @@ export async function planosList(_: any, res: any) {
   } catch (error: any) {
     console.error(error);
     res.status(500).json({
-      error: 'Erro ao buscar os planos',
+      error: 'Erro ao buscar os planos.',
       message: error.message,
     });
   } finally {
@@ -30,7 +30,7 @@ export async function planosListId(req: any, res: any) {
   try {
     const plano = await planoService.find(id);
     if (plano == null) {
-      return res.status(404).json({ status: `Id não encontrado` });
+      return res.status(404).json({ status: `Id não encontrado.` });
     }
     res.json(plano);
   } catch (error: any) {
@@ -78,7 +78,7 @@ export async function planosUpdate(req: any, res: any) {
 
     const plano = await planoService.update(id, payload);
     if (plano == null) {
-      return res.status(404).json({ status: `Id não encontrado` });
+      return res.status(404).json({ status: `Id não encontrado.` });
     }
     res.json(plano);
   } catch (error: any) {
@@ -99,7 +99,7 @@ export async function planosDelete(req: any, res: any) {
   try {
     const user = await planoService.delete(req.params.id);
     if (user == null) {
-      return res.status(404).json({ status: `Id não existe` });
+      return res.status(404).json({ status: `Id não existe.` });
     }
     res.json(user);
   } catch (error: any) {

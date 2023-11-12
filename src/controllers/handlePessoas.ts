@@ -13,7 +13,7 @@ export async function pessoasList(_: any, res: any) {
   } catch (error: any) {
     console.error(error);
     res.status(500).json({
-      error: 'Erro ao buscar as pessoas',
+      error: 'Erro ao buscar as pessoas.',
       message: error.message,
     });
   } finally {
@@ -32,7 +32,7 @@ export async function pessoasListId(req: any, res: any) {
   try {
     const user = await pessoaService.find(id);
     if (user == null) {
-      return res.status(404).json({ status: `Id não encontrado` });
+      return res.status(404).json({ status: `Id não encontrado.` });
     }
     res.json(user);
   } catch (error: any) {
@@ -95,7 +95,7 @@ export async function pessoasUpdate(req: any, res: any) {
 
     const user = await pessoaService.update(id, payload);
     if (user == null) {
-      return res.status(404).json({ status: `Id não encontrado` });
+      return res.status(404).json({ status: `Id não encontrado.` });
     }
     res.json(user);
   } catch (error: any) {
@@ -117,7 +117,7 @@ export async function pessoasDelete(req: any, res: any) {
   try {
     const user = await pessoaService.delete(req.params.id);
     if (user == null) {
-      return res.status(404).json({ status: `Id não existe` });
+      return res.status(404).json({ status: `Id não existe.` });
     }
     res.json(user);
   } catch (error: any) {

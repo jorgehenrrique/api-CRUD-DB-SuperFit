@@ -12,7 +12,7 @@ export async function horariosAulasList(_: any, res: any) {
   } catch (error: any) {
     console.error(error);
     res.status(500).json({
-      error: 'Erro ao buscar os horario_aulas',
+      error: 'Erro ao buscar os horario_aulas.',
       message: error.message,
     });
   } finally {
@@ -95,7 +95,7 @@ export async function horariosAulasDelete(req: any, res: any) {
   try {
     const user = await horarioAulaService.delete(req.params.id);
     if (user == null) {
-      return res.status(404).json({ status: `Id não existe` });
+      return res.status(404).json({ status: `Id não existe.` });
     }
     res.json(user);
   } catch (error: any) {

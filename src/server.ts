@@ -5,7 +5,7 @@ import * as planos from './controllers/handlePlanos';
 import * as matriculas from './controllers/handleMatriculas';
 import * as horariosAulas from './controllers/handleHorariosAulas';
 import * as modalidadesPlanos from './controllers/handleModalidadesPlanos';
-import { relatorio } from './controllers/handleReport';
+import { displayReport } from './controllers/handleReport';
 
 import dotenv from 'dotenv';
 import login from './controllers/handleLogin';
@@ -27,7 +27,7 @@ app.post('/login', login);
 
 // Relatorio
 // GET http://localhost:3000/relatorio
-app.get('/relatorio', loginRequired, relatorio);
+app.get('/relatorio', loginRequired, displayReport);
 
 // GET: http://localhost:3000/pessoas
 app.get('/pessoas', loginRequired, pessoas.pessoasList);

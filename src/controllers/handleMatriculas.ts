@@ -12,7 +12,7 @@ export async function matriculasList(_: any, res: any) {
   } catch (error: any) {
     console.error(error);
     res.status(500).json({
-      error: 'Erro ao buscar as matriculas',
+      error: 'Erro ao buscar as matriculas.',
       message: error.message,
     });
   } finally {
@@ -97,7 +97,7 @@ export async function matriculasDelete(req: any, res: any) {
   try {
     const user = await matriculaService.delete(req.params.id);
     if (user == null) {
-      return res.status(404).json({ status: `Id não existe` });
+      return res.status(404).json({ status: `Id não existe.` });
     }
     res.json(user);
   } catch (error: any) {

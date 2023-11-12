@@ -12,7 +12,7 @@ export async function modalidadesList(_: any, res: any) {
   } catch (error: any) {
     console.error(error);
     res.status(500).json({
-      error: 'Erro ao buscar as modalidades',
+      error: 'Erro ao buscar as modalidades.',
       message: error.message,
     });
   } finally {
@@ -30,7 +30,7 @@ export async function modalidadesListId(req: any, res: any) {
   try {
     const user = await modalidadeService.find(id);
     if (user == null) {
-      return res.status(404).json({ status: `Id não encontrado` });
+      return res.status(404).json({ status: `Id não encontrado.` });
     }
     res.json(user);
   } catch (error: any) {
@@ -76,7 +76,7 @@ export async function modalidadesUpdate(req: any, res: any) {
 
     const modalidade = await modalidadeService.update(id, payload);
     if (modalidade == null) {
-      return res.status(404).json({ status: `Id não encontrado` });
+      return res.status(404).json({ status: `Id não encontrado.` });
     }
     res.json(modalidade);
   } catch (error: any) {
@@ -97,7 +97,7 @@ export async function modalidadesDelete(req: any, res: any) {
   try {
     const user = await modalidadeService.delete(req.params.id);
     if (user == null) {
-      return res.status(404).json({ status: `Id não existe` });
+      return res.status(404).json({ status: `Id não existe.` });
     }
     res.json(user);
   } catch (error: any) {
