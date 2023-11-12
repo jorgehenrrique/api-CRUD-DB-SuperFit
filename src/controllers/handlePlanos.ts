@@ -29,6 +29,9 @@ export async function planosListId(req: any, res: any) {
 
   try {
     const plano = await planoService.find(id);
+    if (plano == null) {
+      return res.status(404).json({ status: `Id não encontrado` });
+    }
     res.json(plano);
   } catch (error: any) {
     console.error(error);
@@ -74,6 +77,9 @@ export async function planosUpdate(req: any, res: any) {
     };
 
     const plano = await planoService.update(id, payload);
+    if (plano == null) {
+      return res.status(404).json({ status: `Id não encontrado` });
+    }
     res.json(plano);
   } catch (error: any) {
     res.status(500).json({
