@@ -553,3 +553,96 @@ Salvar o token recebido para incluir nos headers das demais requisições.
 `json`
 
 ---
+
+### Matriculas listar
+
+**URL:** `/matriculas`
+
+**Método:** `GET`
+
+**Headers:**
+`Authorization API Key`
+
+**Resposta:**
+
+`json`
+
+### Matriculas listar id
+
+**URL:** `/matriculas/:id`
+
+**Método:** `GET`
+
+**Headers:**
+`Authorization API Key`
+
+**Resposta:**
+
+`json`
+
+### Matriculas criar
+
+**URL:** `/matriculas`
+
+**Método:** `POST`
+
+**Headers:**
+`Authorization API Key`
+
+**Corpo da requisição:**
+
+```json
+{
+  "aluno_id": 4,
+  "plano_id": 2,
+  "dia_vencimento": 0,
+  "valor_mensalidade": "100.10",
+  "data_inicio": "2023-07-06T03:00:00.000Z",
+  "data_fim": "2024-06-06T03:00:00.000Z"
+}
+```
+
+**Resposta:**
+
+`json`
+
+### Matriculas atualizar
+
+**URL:** `/matriculas/:id`
+
+**Método:** `PUT`
+
+**Headers:**
+`Authorization API Key`
+
+**Corpo da requisição:**
+
+```json
+{
+  "aluno_id": 4,
+  "plano_id": 2,
+  "dia_vencimento": 0,
+  "valor_mensalidade": "100.10",
+  "data_inicio": "2023-07-06T03:00:00.000Z",
+  "data_fim": "2024-06-06T03:00:00.000Z"
+}
+```
+
+**Resposta:**
+
+`json`
+
+### Matriculas deletar
+
+**URL:** `/matriculas/:id`
+
+**Método:** `DELETE`
+
+**Headers:**
+`Authorization API Key`
+
+**Resposta:**
+
+`json`
+
+---
