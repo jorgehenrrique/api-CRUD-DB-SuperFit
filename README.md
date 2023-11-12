@@ -43,11 +43,11 @@ GROUP BY
 
 ```sql
 SELECT
-    p.nome AS plano,
-    COUNT(m.aluno_id) AS total_alunos,
-    SUM(m.valor_mensalidade) AS valor_total_recebido,
-    COUNT(CASE WHEN pes.adimplente = false THEN 1 END) AS total_inadimplente,
-    COUNT(CASE WHEN pes.adimplente = true THEN 1 END) AS total_adimplente
+    p.nome plano,
+    COUNT(m.aluno_id) total_alunos,
+    SUM(m.valor_mensalidade) valor_total_recebido,
+    COUNT(CASE WHEN pes.adimplente = false THEN 1 END) total_inadimplente,
+    COUNT(CASE WHEN pes.adimplente = true THEN 1 END) total_adimplente
 FROM
     planos p
 LEFT JOIN
