@@ -29,6 +29,9 @@ export async function horariosAulasListId(req: any, res: any) {
 
   try {
     const horarioAula = await horarioAulaService.find(id);
+    if (horarioAula == null) {
+      return res.status(404).json({ status: `Id não encontrado.` });
+    }
     res.json(horarioAula);
   } catch (error: any) {
     console.error(error);
@@ -76,6 +79,9 @@ export async function horariosAulasUpdate(req: any, res: any) {
     };
 
     const horarioAula = await horarioAulaService.update(id, payload);
+    if (horarioAula == null) {
+      return res.status(404).json({ status: `Id não encontrado.` });
+    }
     res.json(horarioAula);
   } catch (error: any) {
     res.status(500).json({
