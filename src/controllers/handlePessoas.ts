@@ -31,6 +31,9 @@ export async function pessoasListId(req: any, res: any) {
 
   try {
     const user = await pessoaService.find(id);
+    if (user == null) {
+      return res.status(404).json({ status: `Id não encontrado` });
+    }
     res.json(user);
   } catch (error: any) {
     console.error(error);
@@ -91,6 +94,9 @@ export async function pessoasUpdate(req: any, res: any) {
     console.log(req.body);
 
     const user = await pessoaService.update(id, payload);
+    if (user == null) {
+      return res.status(404).json({ status: `Id não encontrado` });
+    }
     res.json(user);
   } catch (error: any) {
     res.status(500).json({
