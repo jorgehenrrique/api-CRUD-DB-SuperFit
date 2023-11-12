@@ -12,6 +12,57 @@ Dica: Analise a necessidade de criação de novas tabelas e/ou campos para adequ
 
 O trabalho pode ser executado em duplas e não será necessário a entrega de um front-end.
 
+##
+
+- Consulta escrevendo os planos manualmente
+
+```sql
+SELECT
+    p.nome AS plano,
+    COUNT(m.aluno_id) AS total_alunos,
+    SUM(m.valor_mensalidade) AS valor_total_recebido,
+    COUNT(CASE WHEN pes.adimplente = false THEN 1 END) AS total_inadimplente
+FROM
+    planos p
+LEFT JOIN
+    matriculas m ON p.id = m.plano_id
+LEFT JOIN
+    pessoas pes ON m.aluno_id = pes.id
+WHERE
+    p.nome IN ('Padrão', 'Spinning', 'Jiu-Jitsu', 'Fit Dance')
+    AND m.data_inicio BETWEEN '2023-01-01' AND '2024-12-31'
+GROUP BY
+    p.nome;
+```
+
+##
+
+##
+
+- Consulta buscando os planos com subconsulta
+
+```sql
+SELECT
+    p.nome AS plano,
+    COUNT(m.aluno_id) AS total_alunos,
+    SUM(m.valor_mensalidade) AS valor_total_recebido,
+    COUNT(CASE WHEN pes.adimplente = false THEN 1 END) AS total_inadimplente,
+    COUNT(CASE WHEN pes.adimplente = true THEN 1 END) AS total_adimplente
+FROM
+    planos p
+LEFT JOIN
+    matriculas m ON p.id = m.plano_id
+LEFT JOIN
+    pessoas pes ON m.aluno_id = pes.id
+WHERE
+    p.nome IN (SELECT DISTINCT nome FROM planos)
+    AND m.data_inicio BETWEEN '2023-01-01' AND '2024-12-31'
+GROUP BY
+    p.nome;
+```
+
+##
+
 # Documentação de consumo da API REST que faz consultas a um BD.
 
 Essa API faz CRUD as tabelas do banco de dados PostgreSQL, são as tabelas:

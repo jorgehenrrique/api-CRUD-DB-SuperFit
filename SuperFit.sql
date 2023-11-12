@@ -60,7 +60,7 @@ CREATE TABLE "public.horarios_aulas" (
 
 
 
-CREATE TABLE "public.matricula" (
+CREATE TABLE "public.matriculas" (
 	"id" serial NOT NULL,
 	"aluno_id" integer NOT NULL,
 	"plano_id" integer NOT NULL,
