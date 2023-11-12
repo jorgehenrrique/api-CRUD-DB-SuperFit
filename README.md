@@ -276,7 +276,7 @@ Salvar o token recebido para incluir nos headers das demais requisições.
 
 `json`
 
-### modalidade deletar
+### Modalidade deletar
 
 **URL:** `/modalidades/:id`
 
@@ -291,7 +291,7 @@ Salvar o token recebido para incluir nos headers das demais requisições.
 
 ---
 
-### planos listar
+### Planos listar
 
 **URL:** `/planos`
 
@@ -304,7 +304,7 @@ Salvar o token recebido para incluir nos headers das demais requisições.
 
 `json`
 
-### planos listar id
+### Planos listar id
 
 **URL:** `/planos/:id`
 
@@ -317,7 +317,7 @@ Salvar o token recebido para incluir nos headers das demais requisições.
 
 `json`
 
-### planos criar
+### Planos criar
 
 **URL:** `/planos`
 
@@ -340,7 +340,7 @@ Salvar o token recebido para incluir nos headers das demais requisições.
 
 `json`
 
-### planos atualizar
+### Planos atualizar
 
 **URL:** `/planos/:id`
 
@@ -363,9 +363,94 @@ Salvar o token recebido para incluir nos headers das demais requisições.
 
 `json`
 
-### planos deletar
+### Planos deletar
 
 **URL:** `/planos/:id`
+
+**Método:** `DELETE`
+
+**Headers:**
+`Authorization API Key`
+
+**Resposta:**
+
+`json`
+
+---
+
+### Modalidadesplanos listar
+
+**URL:** `/modalidadesplanos`
+
+**Método:** `GET`
+
+**Headers:**
+`Authorization API Key`
+
+**Resposta:**
+
+`json`
+
+### Modalidadesplanos listar id
+
+**URL:** `/modalidadesplanos/:id/:id2`
+
+**Método:** `GET`
+
+**Headers:**
+`Authorization API Key`
+
+**Resposta:**
+
+`json`
+
+### Modalidadesplanos criar
+
+**URL:** `/modalidadesplanos`
+
+**Método:** `POST`
+
+**Headers:**
+`Authorization API Key`
+
+**Corpo da requisição:**
+
+```json
+{
+  "plano_id": 00,
+  "modalidade_id": 00
+}
+```
+
+**Resposta:**
+
+`json`
+
+### Modalidadesplanos atualizar
+
+**URL:** `/modalidadesplanos/:id/:id2`
+
+**Método:** `PUT`
+
+**Headers:**
+`Authorization API Key`
+
+**Corpo da requisição:**
+
+```json
+{
+  "plano_id": 00,
+  "modalidade_id": 00
+}
+```
+
+**Resposta:**
+
+`json`
+
+### Modalidadesplanos deletar
+
+**URL:** `/modalidadesplanos/:id/:id2`
 
 **Método:** `DELETE`
 
