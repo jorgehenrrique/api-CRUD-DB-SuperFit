@@ -29,6 +29,9 @@ export async function modalidadesListId(req: any, res: any) {
 
   try {
     const user = await modalidadeService.find(id);
+    if (user == null) {
+      return res.status(404).json({ status: `Id não encontrado` });
+    }
     res.json(user);
   } catch (error: any) {
     console.error(error);
@@ -72,6 +75,9 @@ export async function modalidadesUpdate(req: any, res: any) {
     };
 
     const modalidade = await modalidadeService.update(id, payload);
+    if (modalidade == null) {
+      return res.status(404).json({ status: `Id não encontrado` });
+    }
     res.json(modalidade);
   } catch (error: any) {
     res.status(500).json({
