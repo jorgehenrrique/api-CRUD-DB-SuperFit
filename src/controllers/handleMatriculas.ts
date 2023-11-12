@@ -29,6 +29,9 @@ export async function matriculasListId(req: any, res: any) {
 
   try {
     const matricula = await matriculaService.find(id);
+    if (matricula == null) {
+      return res.status(404).json({ status: `Id não encontrado.` });
+    }
     res.json(matricula);
   } catch (error: any) {
     console.error(error);
@@ -78,6 +81,9 @@ export async function matriculasUpdate(req: any, res: any) {
     };
 
     const matricula = await matriculaService.update(id, payload);
+    if (matricula == null) {
+      return res.status(404).json({ status: `Id não encontrado.` });
+    }
     res.json(matricula);
   } catch (error: any) {
     res.status(500).json({
