@@ -5,3 +5,7 @@ export interface InterfaceCrud<DTO> {
   update(id: string, payload: DTO): Promise<DTO>;
   delete(id: string): Promise<void>;
 }
+
+export interface Report<T> {
+  get(): Promise<T>;
+}
