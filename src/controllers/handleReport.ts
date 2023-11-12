@@ -1,6 +1,5 @@
-import { json } from "express";
-import createDBClient from "../db/connection";
-import { ReportService } from "../services/report.service";
+import createDBClient from '../db/connection';
+import { ReportService } from '../services/report.service';
 
 export async function relatorio(req: any, res: any) {
   const db = createDBClient();
@@ -12,7 +11,7 @@ export async function relatorio(req: any, res: any) {
     res.json(report);
   } catch (error: any) {
     res.status(500).json({
-      error: "Erro ao gerar relatório.",
+      error: 'Erro ao gerar relatório.',
       message: error.message,
     });
   } finally {
