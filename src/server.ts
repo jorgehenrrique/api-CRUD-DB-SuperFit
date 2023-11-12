@@ -17,12 +17,9 @@ const { HOST_PORT } = process.env;
 
 app.use(express.json());
 
-// Inicia o sevidor
 app.listen(HOST_PORT, () => {
   console.log('Server ok port: ' + HOST_PORT);
 });
-
-// CRUD - CREATE READ UPDATE DELETE
 
 // Logar usuario
 // POST http://localhost:3000/login

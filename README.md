@@ -121,6 +121,27 @@ Salvar o token recebido para incluir nos headers das demais requisições.
 **Headers:**
 `Authorization API Key`
 
+**Resposta:**
+
+```json
+[
+  {
+    "plano": "Fit Dance",
+    "total_alunos": "3",
+    "valor_total_recebido": "209.70",
+    "total_inadimplente": "1",
+    "total_adimplente": "2"
+  },
+  {
+    "plano": "Jiu-Jitsu",
+    "total_alunos": "5",
+    "valor_total_recebido": "654.80",
+    "total_inadimplente": "1",
+    "total_adimplente": "4"
+  }
+]
+```
+
 ---
 
 ### Pessoas listar
