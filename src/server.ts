@@ -12,6 +12,7 @@ import relatorioRoutes from './routes/relatorioRoutes';
 import pessoasRoutes from './routes/pessoasRoutes';
 import modalidadesRoutes from './routes/modalidadesRoutes';
 import planosRoutes from './routes/planosRoutes';
+import matriculasRoutes from './routes/matriculasRoutes';
 
 import dotenv from 'dotenv';
 // import login from './controllers/handleLogin';
@@ -27,49 +28,30 @@ app.listen(HOST_PORT, () => {
   console.log('Server ok port: ' + HOST_PORT);
 });
 
-// POST http://localhost:3000/login
 app.use('/', loginRoutes);
 
-// GET http://localhost:3000/relatorio
 app.use('/', loginRequired, relatorioRoutes);
 
 app.use('/', loginRequired, pessoasRoutes);
 app.use('/', loginRequired, modalidadesRoutes);
 app.use('/', loginRequired, planosRoutes);
-
+app.use('/', loginRequired, matriculasRoutes);
 // ----------------------------------------------------------------
 
-// // GET: http://localhost:3000/planos
-// app.get('/planos', loginRequired, planos.planosList);
+// // GET: http://localhost:3000/matriculas
+// app.get('/matriculas', loginRequired, matriculas.matriculasList);
 
-// // GET: http://localhost:3000/planos/:id
-// app.get('/planos/:id', loginRequired, planos.planosListId);
+// // GET: http://localhost:3000/matriculas/:id
+// app.get('/matriculas/:id', loginRequired, matriculas.matriculasListId);
 
-// // POST: http://localhost:3000/planos
-// app.post('/planos/', loginRequired, planos.planosAdd);
+// // POST: http://localhost:3000/matriculas
+// app.post('/matriculas/', loginRequired, matriculas.matriculasAdd);
 
-// // PUT: http://localhost:3000/planos/:id
-// app.put('/planos/:id', loginRequired, planos.planosUpdate);
+// // PUT: http://localhost:3000/matriculas/:id
+// app.put('/matriculas/:id', loginRequired, matriculas.matriculasUpdate);
 
-// // DELETE: http://localhost:3000/planos/:id
-// app.delete('/planos/:id', loginRequired, planos.planosDelete);
-
-// ----------------------------------------------------------------
-
-// GET: http://localhost:3000/matriculas
-app.get('/matriculas', loginRequired, matriculas.matriculasList);
-
-// GET: http://localhost:3000/matriculas/:id
-app.get('/matriculas/:id', loginRequired, matriculas.matriculasListId);
-
-// POST: http://localhost:3000/matriculas
-app.post('/matriculas/', loginRequired, matriculas.matriculasAdd);
-
-// PUT: http://localhost:3000/matriculas/:id
-app.put('/matriculas/:id', loginRequired, matriculas.matriculasUpdate);
-
-// DELETE: http://localhost:3000/matriculas/:id
-app.delete('/matriculas/:id', loginRequired, matriculas.matriculasDelete);
+// // DELETE: http://localhost:3000/matriculas/:id
+// app.delete('/matriculas/:id', loginRequired, matriculas.matriculasDelete);
 
 // ----------------------------------------------------------------
 
