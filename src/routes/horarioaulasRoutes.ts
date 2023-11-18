@@ -1,6 +1,5 @@
 import express from 'express';
 import * as horarioaulas from '../controllers/handleHorariosAulas';
-import loginRequired from '../middlewares/loginRequired';
 
 const router = express.Router();
 

@@ -1,6 +1,5 @@
 import express from 'express';
 import * as modalidadesplanos from '../controllers/handleModalidadesPlanos';
-import loginRequired from '../middlewares/loginRequired';
 
 const router = express.Router();
 

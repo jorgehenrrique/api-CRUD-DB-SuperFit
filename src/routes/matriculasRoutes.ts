@@ -1,6 +1,5 @@
 import express from 'express';
 import * as matriculas from '../controllers/handleMatriculas';
-import loginRequired from '../middlewares/loginRequired';
 
 const router = express.Router();
 

@@ -1,6 +1,5 @@
 import express from 'express';
 import * as pessoas from '../controllers/handlePessoas';
-import loginRequired from '../middlewares/loginRequired';
 
 const router = express.Router();
 
