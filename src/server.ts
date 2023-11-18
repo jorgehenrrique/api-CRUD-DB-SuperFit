@@ -1,14 +1,19 @@
 import express from 'express';
-import * as pessoas from './controllers/handlePessoas';
+// import * as pessoas from './controllers/handlePessoas';
 import * as modalidades from './controllers/handleModalidades';
 import * as planos from './controllers/handlePlanos';
 import * as matriculas from './controllers/handleMatriculas';
 import * as horariosAulas from './controllers/handleHorariosAulas';
 import * as modalidadesPlanos from './controllers/handleModalidadesPlanos';
-import { displayReport } from './controllers/handleReport';
+// import { displayReport } from './controllers/handleReport';
+
+import loginRoutes from './routes/loginRoutes';
+import relatorioRoutes from './routes/relatorioRoutes';
+import pessoasRoutes from './routes/pessoasRoutes';
+import modalidadesRoutes from './routes/modalidadesRoutes';
 
 import dotenv from 'dotenv';
-import login from './controllers/handleLogin';
+// import login from './controllers/handleLogin';
 import loginRequired from './middlewares/loginRequired';
 dotenv.config();
 
@@ -21,45 +26,30 @@ app.listen(HOST_PORT, () => {
   console.log('Server ok port: ' + HOST_PORT);
 });
 
-// Logar usuario
 // POST http://localhost:3000/login
-app.post('/login', login);
+app.use('/', loginRoutes);
 
-// Relatorio
 // GET http://localhost:3000/relatorio
-app.get('/relatorio', loginRequired, displayReport);
+app.use('/', loginRequired, relatorioRoutes);
 
-// GET: http://localhost:3000/pessoas
-app.get('/pessoas', loginRequired, pessoas.pessoasList);
-
-// GET: http://localhost:3000/pessoas/:id
-app.get('/pessoas/:id', loginRequired, pessoas.pessoasListId);
-
-// POST: http://localhost:3000/pessoas
-app.post('/pessoas', loginRequired, pessoas.pessoasAdd);
-
-// PUT: http://localhost:3000/pessoas/:id
-app.put('/pessoas/:id', loginRequired, pessoas.pessoasUpdate);
-
-// DELETE: http://localhost:3000/pessoas/:id
-app.delete('/pessoas/:id', loginRequired, pessoas.pessoasDelete);
-
+app.use('/', loginRequired, pessoasRoutes);
 // ----------------------------------------------------------------
 
-// GET: http://localhost:3000/modalidades
-app.get('/modalidades', loginRequired, modalidades.modalidadesList);
+// // GET: http://localhost:3000/modalidades
+// app.get('/modalidades', loginRequired, modalidades.modalidadesList);
 
-// GET: http://localhost:3000/modalidades/:id
-app.get('/modalidades/:id', loginRequired, modalidades.modalidadesListId);
+// // GET: http://localhost:3000/modalidades/:id
+// app.get('/modalidades/:id', loginRequired, modalidades.modalidadesListId);
 
-// POST: http://localhost:3000/modalidades
-app.post('/modalidades', loginRequired, modalidades.modalidadesAdd);
+// // POST: http://localhost:3000/modalidades
+// app.post('/modalidades', loginRequired, modalidades.modalidadesAdd);
 
-// PUT: http://localhost:3000/modalidades/:id
-app.put('/modalidades/:id', loginRequired, modalidades.modalidadesUpdate);
+// // PUT: http://localhost:3000/modalidades/:id
+// app.put('/modalidades/:id', loginRequired, modalidades.modalidadesUpdate);
 
-// DELETE: http://localhost:3000/modalidades/:id
-app.delete('/modalidades/:id', loginRequired, modalidades.modalidadesDelete);
+// // DELETE: http://localhost:3000/modalidades/:id
+// app.delete('/modalidades/:id', loginRequired, modalidades.modalidadesDelete);
+app.use('/', loginRequired, pessoasRoutes);
 
 // ----------------------------------------------------------------
 
