@@ -1,7 +1,7 @@
 import express from 'express';
 // import * as pessoas from './controllers/handlePessoas';
-import * as modalidades from './controllers/handleModalidades';
-import * as planos from './controllers/handlePlanos';
+// import * as modalidades from './controllers/handleModalidades';
+// import * as planos from './controllers/handlePlanos';
 import * as matriculas from './controllers/handleMatriculas';
 import * as horariosAulas from './controllers/handleHorariosAulas';
 import * as modalidadesPlanos from './controllers/handleModalidadesPlanos';
@@ -11,6 +11,7 @@ import loginRoutes from './routes/loginRoutes';
 import relatorioRoutes from './routes/relatorioRoutes';
 import pessoasRoutes from './routes/pessoasRoutes';
 import modalidadesRoutes from './routes/modalidadesRoutes';
+import planosRoutes from './routes/planosRoutes';
 
 import dotenv from 'dotenv';
 // import login from './controllers/handleLogin';
@@ -33,40 +34,25 @@ app.use('/', loginRoutes);
 app.use('/', loginRequired, relatorioRoutes);
 
 app.use('/', loginRequired, pessoasRoutes);
-// ----------------------------------------------------------------
-
-// // GET: http://localhost:3000/modalidades
-// app.get('/modalidades', loginRequired, modalidades.modalidadesList);
-
-// // GET: http://localhost:3000/modalidades/:id
-// app.get('/modalidades/:id', loginRequired, modalidades.modalidadesListId);
-
-// // POST: http://localhost:3000/modalidades
-// app.post('/modalidades', loginRequired, modalidades.modalidadesAdd);
-
-// // PUT: http://localhost:3000/modalidades/:id
-// app.put('/modalidades/:id', loginRequired, modalidades.modalidadesUpdate);
-
-// // DELETE: http://localhost:3000/modalidades/:id
-// app.delete('/modalidades/:id', loginRequired, modalidades.modalidadesDelete);
-app.use('/', loginRequired, pessoasRoutes);
+app.use('/', loginRequired, modalidadesRoutes);
+app.use('/', loginRequired, planosRoutes);
 
 // ----------------------------------------------------------------
 
-// GET: http://localhost:3000/planos
-app.get('/planos', loginRequired, planos.planosList);
+// // GET: http://localhost:3000/planos
+// app.get('/planos', loginRequired, planos.planosList);
 
-// GET: http://localhost:3000/planos/:id
-app.get('/planos/:id', loginRequired, planos.planosListId);
+// // GET: http://localhost:3000/planos/:id
+// app.get('/planos/:id', loginRequired, planos.planosListId);
 
-// POST: http://localhost:3000/planos
-app.post('/planos/', loginRequired, planos.planosAdd);
+// // POST: http://localhost:3000/planos
+// app.post('/planos/', loginRequired, planos.planosAdd);
 
-// PUT: http://localhost:3000/planos/:id
-app.put('/planos/:id', loginRequired, planos.planosUpdate);
+// // PUT: http://localhost:3000/planos/:id
+// app.put('/planos/:id', loginRequired, planos.planosUpdate);
 
-// DELETE: http://localhost:3000/planos/:id
-app.delete('/planos/:id', loginRequired, planos.planosDelete);
+// // DELETE: http://localhost:3000/planos/:id
+// app.delete('/planos/:id', loginRequired, planos.planosDelete);
 
 // ----------------------------------------------------------------
 
