@@ -4,11 +4,11 @@ import loginRequired from '../middlewares/loginRequired';
 
 const router = express.Router();
 
-router.get('/modalidades', loginRequired, modalidades.modalidadesList);
-router.get('/modalidades/:id', loginRequired, modalidades.modalidadesListId);
-router.post('/modalidades', loginRequired, modalidades.modalidadesAdd);
-router.put('/modalidades/:id', loginRequired, modalidades.modalidadesUpdate);
-router.delete('/modalidades/:id', loginRequired, modalidades.modalidadesDelete);
+router.get('/modalidades', modalidades.modalidadesList);
+router.get('/modalidades/:id', modalidades.modalidadesListId);
+router.post('/modalidades', modalidades.modalidadesAdd);
+router.put('/modalidades/:id', modalidades.modalidadesUpdate);
+router.delete('/modalidades/:id', modalidades.modalidadesDelete);
 
 export default router;
 

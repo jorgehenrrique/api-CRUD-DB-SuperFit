@@ -1,11 +1,4 @@
 import express from 'express';
-// import * as pessoas from './controllers/handlePessoas';
-// import * as modalidades from './controllers/handleModalidades';
-// import * as planos from './controllers/handlePlanos';
-import * as matriculas from './controllers/handleMatriculas';
-import * as horariosAulas from './controllers/handleHorariosAulas';
-import * as modalidadesPlanos from './controllers/handleModalidadesPlanos';
-// import { displayReport } from './controllers/handleReport';
 
 import loginRoutes from './routes/loginRoutes';
 import relatorioRoutes from './routes/relatorioRoutes';
@@ -17,7 +10,6 @@ import horarioaulasRoutes from './routes/horarioaulasRoutes';
 import modalidadesplanosRoutes from './routes/modalidadesplanosRoutes';
 
 import dotenv from 'dotenv';
-// import login from './controllers/handleLogin';
 import loginRequired from './middlewares/loginRequired';
 dotenv.config();
 

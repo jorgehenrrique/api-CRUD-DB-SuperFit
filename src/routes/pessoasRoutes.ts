@@ -4,11 +4,11 @@ import loginRequired from '../middlewares/loginRequired';
 
 const router = express.Router();
 
-router.get('/pessoas', loginRequired, pessoas.pessoasList);
-router.get('/pessoas/:id', loginRequired, pessoas.pessoasListId);
-router.post('/pessoas', loginRequired, pessoas.pessoasAdd);
-router.put('/pessoas/:id', loginRequired, pessoas.pessoasUpdate);
-router.delete('/pessoas/:id', loginRequired, pessoas.pessoasDelete);
+router.get('/pessoas', pessoas.pessoasList);
+router.get('/pessoas/:id', pessoas.pessoasListId);
+router.post('/pessoas', pessoas.pessoasAdd);
+router.put('/pessoas/:id', pessoas.pessoasUpdate);
+router.delete('/pessoas/:id', pessoas.pessoasDelete);
 
 export default router;
 

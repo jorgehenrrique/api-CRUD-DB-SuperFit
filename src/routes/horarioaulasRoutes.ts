@@ -4,23 +4,11 @@ import loginRequired from '../middlewares/loginRequired';
 
 const router = express.Router();
 
-router.get('/horarioaulas', loginRequired, horarioaulas.horariosAulasList);
-router.get(
-  '/horarioaulas/:id',
-  loginRequired,
-  horarioaulas.horariosAulasListId
-);
-router.post('/horarioaulas', loginRequired, horarioaulas.horariosAulasAdd);
-router.put(
-  '/horarioaulas/:id',
-  loginRequired,
-  horarioaulas.horariosAulasUpdate
-);
-router.delete(
-  '/horarioaulas/:id',
-  loginRequired,
-  horarioaulas.horariosAulasDelete
-);
+router.get('/horarioaulas', horarioaulas.horariosAulasList);
+router.get('/horarioaulas/:id', horarioaulas.horariosAulasListId);
+router.post('/horarioaulas', horarioaulas.horariosAulasAdd);
+router.put('/horarioaulas/:id', horarioaulas.horariosAulasUpdate);
+router.delete('/horarioaulas/:id', horarioaulas.horariosAulasDelete);
 
 export default router;
 

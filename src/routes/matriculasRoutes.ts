@@ -4,11 +4,11 @@ import loginRequired from '../middlewares/loginRequired';
 
 const router = express.Router();
 
-router.get('/matriculas', loginRequired, matriculas.matriculasList);
-router.get('/matriculas/:id', loginRequired, matriculas.matriculasListId);
-router.post('/matriculas', loginRequired, matriculas.matriculasAdd);
-router.put('/matriculas/:id', loginRequired, matriculas.matriculasUpdate);
-router.delete('/matriculas/:id', loginRequired, matriculas.matriculasDelete);
+router.get('/matriculas', matriculas.matriculasList);
+router.get('/matriculas/:id', matriculas.matriculasListId);
+router.post('/matriculas', matriculas.matriculasAdd);
+router.put('/matriculas/:id', matriculas.matriculasUpdate);
+router.delete('/matriculas/:id', matriculas.matriculasDelete);
 
 export default router;
 

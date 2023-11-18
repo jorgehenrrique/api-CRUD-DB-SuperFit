@@ -4,11 +4,11 @@ import loginRequired from '../middlewares/loginRequired';
 
 const router = express.Router();
 
-router.get('/planos', loginRequired, planos.planosList);
-router.get('/planos/:id', loginRequired, planos.planosListId);
-router.post('/planos', loginRequired, planos.planosAdd);
-router.put('/planos/:id', loginRequired, planos.planosUpdate);
-router.delete('/planos/:id', loginRequired, planos.planosDelete);
+router.get('/planos', planos.planosList);
+router.get('/planos/:id', planos.planosListId);
+router.post('/planos', planos.planosAdd);
+router.put('/planos/:id', planos.planosUpdate);
+router.delete('/planos/:id', planos.planosDelete);
 
 export default router;
 
