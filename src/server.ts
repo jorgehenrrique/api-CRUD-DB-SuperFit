@@ -14,6 +14,7 @@ import modalidadesRoutes from './routes/modalidadesRoutes';
 import planosRoutes from './routes/planosRoutes';
 import matriculasRoutes from './routes/matriculasRoutes';
 import horarioaulasRoutes from './routes/horarioaulasRoutes';
+import modalidadesplanosRoutes from './routes/modalidadesplanosRoutes';
 
 import dotenv from 'dotenv';
 // import login from './controllers/handleLogin';
@@ -38,45 +39,7 @@ app.use('/', loginRequired, modalidadesRoutes);
 app.use('/', loginRequired, planosRoutes);
 app.use('/', loginRequired, matriculasRoutes);
 app.use('/', loginRequired, horarioaulasRoutes);
-
-// ----------------------------------------------------------------
-
-// GET: http://localhost:3000/modalidadesplanos
-app.get(
-  '/modalidadesplanos',
-  loginRequired,
-  modalidadesPlanos.modalidadesPlanosList
-);
-
-// GET: http://localhost:3000/modalidadesplanos/:id/:id2
-app.get(
-  '/modalidadesplanos/:id/:id2',
-  loginRequired,
-  modalidadesPlanos.modalidadesPlanosListId
-);
-
-// POST: http://localhost:3000/modalidadesplanos
-app.post(
-  '/modalidadesplanos/',
-  loginRequired,
-  modalidadesPlanos.modalidadesPlanosAdd
-);
-
-// PUT: http://localhost:3000/modalidadesplanos/:id/:id2
-app.put(
-  '/modalidadesplanos/:id/:id2',
-  loginRequired,
-  modalidadesPlanos.modalidadesplanosUpdate
-);
-
-// DELETE: http://localhost:3000/modalidadesplanos/:id/:id2
-app.delete(
-  '/modalidadesplanos/:id/:id2',
-  loginRequired,
-  modalidadesPlanos.modalidadesplanosDelete
-);
-
-// ----------------------------------------------------------------
+app.use('/', loginRequired, modalidadesplanosRoutes);
 
 // Resposta padrão para quaisquer outras requisições:
 app.use((_: any, res: any) => {
