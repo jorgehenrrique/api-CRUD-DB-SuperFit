@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.use(loginRequired);
 
-router.get('/relatorio', displayReport);
+router.get('/', displayReport);
 
 export default router;
 
