@@ -1,22 +1,16 @@
 import express from 'express';
 import * as modalidadesplanos from '../controllers/handleModalidadesPlanos';
+import loginRequired from '../middlewares/loginRequired';
 
 const router = express.Router();
 
-router.get('/modalidadesplanos', modalidadesplanos.modalidadesPlanosList);
-router.get(
-  '/modalidadesplanos/:id/:id2',
-  modalidadesplanos.modalidadesPlanosListId
-);
-router.post('/modalidadesplanos', modalidadesplanos.modalidadesPlanosAdd);
-router.put(
-  '/modalidadesplanos/:id/:id2',
-  modalidadesplanos.modalidadesplanosUpdate
-);
-router.delete(
-  '/modalidadesplanos/:id/:id2',
-  modalidadesplanos.modalidadesplanosDelete
-);
+router.use(loginRequired);
+
+router.get('/', modalidadesplanos.modalidadesPlanosList);
+router.get('/:id/:id2', modalidadesplanos.modalidadesPlanosListId);
+router.post('/', modalidadesplanos.modalidadesPlanosAdd);
+router.put('/:id/:id2', modalidadesplanos.modalidadesplanosUpdate);
+router.delete('/:id/:id2', modalidadesplanos.modalidadesplanosDelete);
 
 export default router;
 

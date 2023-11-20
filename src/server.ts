@@ -22,16 +22,14 @@ app.listen(HOST_PORT, () => {
   console.log('Server ok port: ' + HOST_PORT);
 });
 
-app.use('/', loginRoutes);
-
+app.use('/login', loginRoutes);
+app.use('/relatorio', relatorioRoutes);
 app.use('/pessoas', pessoasRoutes);
 app.use('/modalidades', modalidadesRoutes);
 app.use('/planos', planosRoutes);
-app.use('/', matriculasRoutes);
-app.use('/', horarioaulasRoutes);
-app.use('/', modalidadesplanosRoutes);
-
-app.use('/', loginRequired, relatorioRoutes);
+app.use('/matriculas', matriculasRoutes);
+app.use('/horarioaulas', horarioaulasRoutes);
+app.use('/modalidadesplanos', modalidadesplanosRoutes);
 
 // Resposta padrão para quaisquer outras requisições:
 app.use((_: any, res: any) => {
