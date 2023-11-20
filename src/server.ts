@@ -24,14 +24,14 @@ app.listen(HOST_PORT, () => {
 
 app.use('/', loginRoutes);
 
-app.use('/', loginRequired, relatorioRoutes);
+app.use('/pessoas', pessoasRoutes);
+app.use('/modalidades', modalidadesRoutes);
+app.use('/planos', planosRoutes);
+app.use('/', matriculasRoutes);
+app.use('/', horarioaulasRoutes);
+app.use('/', modalidadesplanosRoutes);
 
-app.use('/', loginRequired, pessoasRoutes);
-app.use('/', loginRequired, modalidadesRoutes);
-app.use('/', loginRequired, planosRoutes);
-app.use('/', loginRequired, matriculasRoutes);
-app.use('/', loginRequired, horarioaulasRoutes);
-app.use('/', loginRequired, modalidadesplanosRoutes);
+app.use('/', loginRequired, relatorioRoutes);
 
 // Resposta padrão para quaisquer outras requisições:
 app.use((_: any, res: any) => {

@@ -1,13 +1,16 @@
 import express from 'express';
 import * as pessoas from '../controllers/handlePessoas';
+import loginRequired from '../middlewares/loginRequired';
 
 const router = express.Router();
 
-router.get('/pessoas', pessoas.pessoasList);
-router.get('/pessoas/:id', pessoas.pessoasListId);
-router.post('/pessoas', pessoas.pessoasAdd);
-router.put('/pessoas/:id', pessoas.pessoasUpdate);
-router.delete('/pessoas/:id', pessoas.pessoasDelete);
+router.use(loginRequired);
+
+router.get('/', pessoas.pessoasList);
+router.get('/:id', pessoas.pessoasListId);
+router.post('/', pessoas.pessoasAdd);
+router.put('/:id', pessoas.pessoasUpdate);
+router.delete('/:id', pessoas.pessoasDelete);
 
 export default router;
 

@@ -1,13 +1,16 @@
 import express from 'express';
 import * as planos from '../controllers/handlePlanos';
+import loginRequired from '../middlewares/loginRequired';
 
 const router = express.Router();
 
-router.get('/planos', planos.planosList);
-router.get('/planos/:id', planos.planosListId);
-router.post('/planos', planos.planosAdd);
-router.put('/planos/:id', planos.planosUpdate);
-router.delete('/planos/:id', planos.planosDelete);
+router.use(loginRequired);
+
+router.get('/', planos.planosList);
+router.get('/:id', planos.planosListId);
+router.post('/', planos.planosAdd);
+router.put('/:id', planos.planosUpdate);
+router.delete('/:id', planos.planosDelete);
 
 export default router;
 
