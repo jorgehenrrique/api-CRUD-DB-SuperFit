@@ -10,7 +10,6 @@ import horarioaulasRoutes from './routes/horarioaulasRoutes';
 import modalidadesplanosRoutes from './routes/modalidadesplanosRoutes';
 
 import dotenv from 'dotenv';
-import loginRequired from './middlewares/loginRequired';
 dotenv.config();
 
 const app = express();
